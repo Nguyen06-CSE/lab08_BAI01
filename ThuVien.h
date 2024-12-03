@@ -3,7 +3,8 @@
 #define MAX 100
 
 struct SinhVien {
-    char MSSV[8], ho[31], ten[11], gioiTinh, lop[11];
+    //char MSSV[8], ho[31], ten[11], gioiTinh, lop[11];
+    string MSSV, ho, ten, gioiTinh, lop;
     double diem;
 };
 
@@ -30,19 +31,23 @@ void SinhVienDiemCao(DanhSachSV ds, int n);
 void nhap1SV(SinhVien& a) {
     cout << "nhap MSSV: ";
     cin >> a.MSSV;
+    cin.ignore();  
+
     cout << "nhap ho va ten dem: ";
-    cin.ignore();
-    gets_s(a.ho);
+    getline(cin, a.ho);
+
     cout << "nhap ten sinh vien: ";
-    cin >> a.ten;
+    cin >> a.ten;  
+
     cout << "nhap gioi tinh (M la nam, F la nu): ";
     cin >> a.gioiTinh;
+
     cout << "nhap lop: ";
     cin >> a.lop;
+
     cout << "nhap diem: ";
     cin >> a.diem;
 }
-
 void xuat1SV(SinhVien a) {
     cout << "\n" << setiosflags(ios::left)
         << setw(10) << a.MSSV
@@ -61,7 +66,7 @@ void nhapChuoiSV(DanhSachSV ds, int& n) {
         cin >> ds[i].MSSV;
         cout << "nhap ho va ten dem: ";
         cin.ignore();
-        gets_s(ds[i].ho);
+        getline(cin, ds[i].ho);
         cout << "nhap ten sinh vien: ";
         cin >> ds[i].ten;
         cout << "nhap gioi tinh (M la nam, F la nu): ";
@@ -116,11 +121,11 @@ void xuatDSTheoDiemGiam(DanhSachSV ds, int n) {
 void xapXepTheoTen(DanhSachSV ds, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
-            int kt = strcmp(ds[i].ten, ds[j].ten);
+            int kt = ds[i].ten.compare(ds[j].ten) ;
             if (kt > 0) hoanVi(ds[i], ds[j]);
 
             if (kt == 0) {
-                int ktHo = strcmp(ds[i].ho, ds[j].ho);
+                int ktHo = ds[i].ho.compare(ds[j].ho);
                 if (ktHo > 0) hoanVi(ds[i], ds[j]);
             }
 
@@ -132,7 +137,7 @@ void timTheoTen(DanhSachSV ds, int n) {
     cout << "nhap ten sinh vien ban muon tim kiem: ";
     char ten[11]; cin >> ten;
     for (int i = 0; i < n; i++) {
-        int kt = strcmp(ds[i].ten, ten);
+        int kt = ds[i].ten.compare(ten);
         if (kt == 0) xuat1SV(ds[i]);
 
     }
@@ -145,7 +150,7 @@ void xuatSVTuLop(DanhSachSV ds, int n) {
     int k = 0;
     cout << "Nhap lop ban muon tim kiem sinh vien: "; cin >> lop;
     for (int i = 0; i < n; i++) {
-        int kt = strcmp(ds[i].lop, lop);
+        int kt = ds[i].lop.compare(lop);
         if (kt == 0) {
             ds[k] = ds[i];
             ++k;
@@ -167,10 +172,11 @@ void timSVTuMSSV(DanhSachSV ds, int n) {
     char ma[8];
     cout << "hay nhap MSSV ban muon tim kiem: "; cin >> ma;
     for (int i = 0; i < n; i++) {
-        int kt = strcmp(ds[i].MSSV, ma);
+        int kt = ds[i].MSSV.compare(ma);
         if (kt == 0) xuat1SV(ds[i]);
+        else    cout << ma << " ko ton tai trong danh sach\n";
     }
-    cout << ma << " ko ton tai trong danh sach\n";
+    
 }
 
 double tiLeSinhVienGioi(DanhSachSV ds, int n) {
@@ -274,7 +280,7 @@ double DoChenhLechNamNu(DanhSachSV ds, int n)
 {
     double demNam = 0;
     for (int i = 0; i < n; i++) {
-        if (ds[i].gioiTinh == 'm' || ds[i].gioiTinh == 'M') {
+        if (ds[i].gioiTinh == "m" || ds[i].gioiTinh == "M") {
             ++demNam;
         }
     }
@@ -290,7 +296,7 @@ void ThongKeSoLuongLop(DanhSachSV ds, int n) {
         if (!mangKT[i]) {
             int dem = 1;
             for (int j = i + 1; j < n; j++) {   
-                int kt = strcmp(ds[i].lop, ds[j].lop);
+                int kt = ds[i].lop.compare(ds[j].lop);
                 if (kt == 0 && !mangKT[j]) {
                     ++dem;
                     mangKT[j] = true;

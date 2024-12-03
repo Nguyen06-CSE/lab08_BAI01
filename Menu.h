@@ -108,27 +108,27 @@ void ChayChuongTrinh()
     int soMenu = 15, chon;
     int n = 21;
     DanhSachSV ds = {
-    {"2411887", "Cao Khoi", "Nguyen", 'M', "CTK48", 10},
-    {"2411888", "Anh Tuan", "Le", 'M', "CTK48", 8.5},
-    {"2411889", "Bao Chau", "Nguyen", 'F', "CTK48", 9.0},
-    {"2411890", "Minh Tam", "Tran", 'M', "CTK49", 7.8},
-    {"2411891", "Hoang Anh", "Pham", 'F', "CTK49", 6.2},
-    {"2411892", "Duc Minh", "Tran", 'M', "CTK48", 5.5},
-    {"2411893", "Lan Huong", "Nguyen", 'F', "CTK50", 7.3},
-    {"2411894", "Phuong Linh", "Le", 'F', "CTK50", 10},
-    {"2411895", "Huu Thang", "Pham", 'M', "CTK48", 8.7},
-    {"2411896", "Kim Ngan", "Do", 'F', "CTK50", 6.8},
-    {"2411897", "Minh Khang", "Le", 'M', "CTK49", 9.2},
-    {"2411898", "Duc Thinh", "Hoang", 'M', "CTK49", 4.9},
-    {"2411899", "Mai Chi", "Vu", 'F', "CTK48", 8.1},
-    {"2411900", "Thanh Huyen", "Nguyen", 'F', "CTK50", 10},
-    {"2411901", "Quoc Bao", "Tran", 'M', "CTK48", 7.0},
-    {"2411902", "Ngoc Bich", "Phan", 'F', "CTK48", 8.4},
-    {"2411903", "Hoang Kien", "Dinh", 'M', "CTK49", 5.8},
-    {"2411904", "Tuong Vy", "Pham", 'F', "CTK50", 9.7},
-    {"2411905", "Tien Dung", "Ngo", 'M', "CTK48", 6.1},
-    {"2411906", "Thu Hang", "Dang", 'F', "CTK49", 7.9},
-    {"2411907", "Van Son", "Tran", 'M', "CTK48", 1.2}
+    {"2411887", "Cao Khoi", "Nguyen", "M", "CTK48", 10},
+    {"2411888", "Anh Tuan", "Le", "M", "CTK48", 8.5},
+    {"2411889", "Bao Chau", "Nguyen", "F", "CTK48", 9.0},
+    {"2411890", "Minh Tam", "Tran", "M", "CTK49", 7.8},
+    {"2411891", "Hoang Anh", "Pham", "F", "CTK49", 6.2},
+    {"2411892", "Duc Minh", "Tran", "M", "CTK48", 5.5},
+    {"2411893", "Lan Huong", "Nguyen", "F", "CTK50", 7.3},
+    {"2411894", "Phuong Linh", "Le", "F", "CTK50", 10},
+    {"2411895", "Huu Thang", "Pham", "M", "CTK48", 8.7},
+    {"2411896", "Kim Ngan", "Do", "F", "CTK50", 6.8},
+    {"2411897", "Minh Khang", "Le", "M", "CTK49", 9.2},
+    {"2411898", "Duc Thinh", "Hoang", "M", "CTK49", 4.9},
+    {"2411899", "Mai Chi", "Vu", "F", "CTK48", 8.1},
+    {"2411900", "Thanh Huyen", "Nguyen", "F", "CTK50", 10},
+    {"2411901", "Quoc Bao", "Tran", "M", "CTK48", 7.0},
+    {"2411902", "Ngoc Bich", "Phan", "M", "CTK48", 8.4},
+    {"2411903", "Hoang Kien", "Dinh", "F", "CTK49", 5.8},
+    {"2411904", "Tuong Vy", "Pham", "F", "CTK50", 9.7},
+    {"2411905", "Tien Dung", "Ngo", "M", "CTK48", 6.1},
+    {"2411906", "Thu Hang", "Dang", "F", "CTK49", 7.9},
+    {"2411907", "Van Son", "Tran", "M", "CTK48", 1.2}
     };
     do {
         system("cls");
